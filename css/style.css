@@ -31,7 +31,61 @@
 /* ================================
    首页 #intro
    ================================ */
+/* 首页整页背景图 */
+   #intro {
+    position: relative;
+    width: min(85vw, 1080px);
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 30px;
+  }
+  #intro::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(rgba(255, 248, 235, 0.05), rgba(255, 255, 255, 0.08)),
+      url("../reference/背景1.jpeg") center center / cover no-repeat;
+    z-index: 0;
+  }
 
+  /* 让首页内容在背景上层 */
+  #intro > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* 只保留“SLTI测试”框作为浮层，降低透明度 */
+  #intro .hero {
+     margin: 30vh auto 0;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 280px;
+  }
+  #intro .hero-title {
+    margin: 0 0 24px;
+     color: #e98502;
+    text-shadow:
+      0 1px 2px rgba(0, 0, 0, 0.5),
+      0 0 4px #940d0d;
+    font-size: clamp(32px, 5vw, 54px);
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  #intro .hero-actions {
+    display: flex;
+    justify-content: center;
+  }
 /* ================================
    测试页 #test
    - 进度条
@@ -71,8 +125,8 @@ body {
     -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
     "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   background:
-    radial-gradient(circle at top left, #fffdf5 0, #fbfaf8 36%, #f5f4f2 100%);
-  color: var(--text);
+    linear-gradient(rgba(255, 250, 245, 0), rgba(255, 250, 245, 0)),
+    url("../reference/1.jpg") center center / cover fixed no-repeat;
   font-size: 24px;
   min-height: 100vh;
 }
@@ -302,7 +356,7 @@ button:disabled {
 .btn-secondary {
   border-radius: 24px;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 27px;
   padding: 22px 30px;
 }
 
@@ -845,3 +899,17 @@ button:disabled {
     font-size: 22px;
   }
 }
+
+ @media (max-width: 780px) {
+    #intro {
+      width: min(92vw, 560px);   /* 可调：控制手机端方形大小 */
+      aspect-ratio: 4 / 5;       /* 可调：保持方形；以后可改成 4 / 5 等 */
+      margin: 0 auto;
+    }
+
+    #intro::before {
+      background:
+        linear-gradient(rgba(255, 248, 235, 0.05), rgba(255, 255, 255, 0.08)),
+        url("../reference/背景1.jpeg") center 40% / cover no-repeat;
+    }
+  }

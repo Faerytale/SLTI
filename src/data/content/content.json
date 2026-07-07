@@ -210,7 +210,7 @@
   },
   "drunkTriggerQuestionId": "drink_gate_q2",
   "imagePaths": {
-    "人格1": "reference/images/万事顺栗.jpg",
+     "人格1": "reference/images/万事顺栗.jpg",
     "人格2": "reference/images/吉姆栗.jpg",
     "人格3": "reference/images/栗地成佛.jpg",
     "人格4": "reference/images/舍栗子.jpg",
@@ -352,8 +352,8 @@
           "reason": "有些路走了才知道自己能走多远——这是树礼的招牌。"
         },
         {
-          "activity": "shuli_hanfushe",
-          "reason": "有些东西穿在身上走进人群就懂了，不需要过多解释。"
+          "activity": "shuli_jubenshashe",
+          "reason": "代入角色自信发言，还原细节带动全场。"
         },
         {
           "activity": "shuli_xueshenghui",
@@ -373,8 +373,8 @@
       "desc": "你像是指环王护戒小队里麻花胡子的矮人吉姆利，人狠话也多，在对团队疯狂输出吐槽的同时也在扎扎实实地为团队兜底。即使队伍里面有精灵这种一无是处的队员，你除了吹胡子翻白眼反复抱怨之外从不表现出任何消极反应。",
       "recommendations": [
         {
-          "activity": "shuli_gunwangqiu",
-          "reason": "跑起来就不需要想太多，一棍一球，简单直接。"
+          "activity": "shuli_lanqiudui",
+          "reason": "绝对的团队核心，接球就投，carry全场。"
         },
         {
           "activity": "shuli_chongzou",
@@ -439,8 +439,8 @@
           "reason": "镜头后面你不需要被看见，但你捕捉的东西会被很多人看到。"
         },
         {
-          "activity": "shuli_shuochangshe",
-          "reason": "你的态度值得被听见——用节奏而不是用解释。"
+          "activity": "shuli_xuefa",
+          "reason": "处理工作如鱼得水，全方位支持同学学业发展"
         }
       ],
       "rarity": "稀有"
@@ -564,8 +564,8 @@
           "reason": "有些路走了才知道自己能走多远——这是树礼的招牌。"
         },
         {
-          "activity": "shuli_shuochangshe",
-          "reason": "你的态度值得被听见——用节奏而不是用解释。"
+          "activity": "shuli_xuefa",
+          "reason": "处理工作如鱼得水，全方位支持同学学业发展"
         }
       ],
       "rarity": "中等"
@@ -581,8 +581,8 @@
           "reason": "照顾别人的日常是你最自然的样子，被需要的感觉很实在。"
         },
         {
-          "activity": "shuli_shuochangshe",
-          "reason": "你的态度值得被听见——用节奏而不是用解释。"
+          "activity": "shuli_xuefa",
+          "reason": "处理工作如鱼得水，全方位支持同学学业发展"
         },
         {
           "activity": "shuli_libao",
@@ -606,8 +606,8 @@
           "reason": "照顾别人的日常是你最自然的样子，被需要的感觉很实在。"
         },
         {
-          "activity": "shuli_shuochangshe",
-          "reason": "你的态度值得被听见——用节奏而不是用解释。"
+          "activity": "shuli_xuefa",
+          "reason": "处理工作如鱼得水，全方位支持同学学业发展"
         },
         {
           "activity": "shuli_zuqiudui",
@@ -685,8 +685,8 @@
           "reason": "照顾别人的日常是你最自然的样子，被需要的感觉很实在。"
         },
         {
-          "activity": "shuli_hanfushe",
-          "reason": "有些东西穿在身上走进人群就懂了，不需要过多解释。"
+          "activity": "shuli_jubenshashe",
+          "reason": "代入角色自信发言，还原细节带动全场。"
         },
         {
           "activity": "shuli_yumaoqiudui",
@@ -714,8 +714,8 @@
           "reason": "有些路走了才知道自己能走多远——这是树礼的招牌。"
         },
         {
-          "activity": "shuli_hanfushe",
-          "reason": "有些东西穿在身上走进人群就懂了，不需要过多解释。"
+          "activity": "shuli_jubenshashe",
+          "reason": "代入角色自信发言，还原细节带动全场。"
         }
       ],
       "rarity": "稀有"
@@ -835,8 +835,8 @@
           "reason": "一个人的球台，输赢都是自己的，干净利落。"
         },
         {
-          "activity": "shuli_shuochangshe",
-          "reason": "你的态度值得被听见——用节奏而不是用解释。"
+          "activity": "shuli_xuefa",
+          "reason": "处理工作如鱼得水，全方位支持同学学业发展"
         },
         {
           "activity": "shuli_xinmeiti",
@@ -860,8 +860,8 @@
           "reason": "可以单打可以双打，你想怎么来就怎么来，没人勉强。"
         },
         {
-          "activity": "shuli_shuochangshe",
-          "reason": "你的态度值得被听见——用节奏而不是用解释。"
+          "activity": "shuli_xuefa",
+          "reason": "处理工作如鱼得水，全方位支持同学学业发展"
         },
         {
           "activity": "shuli_akabelle",
@@ -889,8 +889,8 @@
           "reason": "镜头后面你不需要被看见，但你捕捉的东西会被很多人看到。"
         },
         {
-          "activity": "shuli_hanfushe",
-          "reason": "有些东西穿在身上走进人群就懂了，不需要过多解释。"
+          "activity": "shuli_jubenshashe",
+          "reason": "代入角色自信发言，还原细节带动全场。"
         }
       ],
       "rarity": "中等"
@@ -910,8 +910,8 @@
           "reason": "照顾别人的日常是你最自然的样子，被需要的感觉很实在。"
         },
         {
-          "activity": "shuli_shuochangshe",
-          "reason": "你的态度值得被听见——用节奏而不是用解释。"
+          "activity": "shuli_xuefa",
+          "reason": "处理工作如鱼得水，全方位支持同学学业发展"
         },
         {
           "activity": "shuli_xueshenghui",
@@ -960,12 +960,12 @@
           "reason": "照顾别人的日常是你最自然的样子，被需要的感觉很实在。"
         },
         {
-          "activity": "shuli_shuochangshe",
-          "reason": "你的态度值得被听见——用节奏而不是用解释。"
+          "activity": "shuli_xuefa",
+          "reason": "处理工作如鱼得水，全方位支持同学学业发展"
         },
         {
-          "activity": "shuli_hanfushe",
-          "reason": "有些东西穿在身上走进人群就懂了，不需要过多解释。"
+          "activity": "shuli_jubenshashe",
+          "reason": "代入角色自信发言，还原细节带动全场。"
         }
       ],
       "rarity": "中等"
@@ -1104,15 +1104,15 @@
       "text": "你的对象在你人生中的位置是：",
       "options": [
         {
-          "label": "我现在很喜欢ta，之后再说吧",
+          "label": "我享受与ta在一起的当下，但我不想刻意把ta编入我未来的人生",
           "value": 1
         },
         {
-          "label": "我们在学生时代会互相厮守",
+          "label": "起码在学生时代，我会努力成为ta的依靠",
           "value": 2
         },
         {
-          "label": "我会把ta编入毕业前后我的未来我的人生",
+          "label": "我愿意将 ta 视为我未来生活不可或缺的一部分",
           "value": 3
         }
       ]
@@ -1735,6 +1735,21 @@
       "name": "树礼博观沙龙",
       "url": "https://mp.weixin.qq.com/s/_XyDI0p3hEFYDRk4gH3fYQ",
       "image": "reference/StudentOrganizationPhoto/树礼博观沙龙.jpg"
+    },
+    "shuli_jubenshashe": {
+      "name": "树礼南柯迷岛剧本杀社",
+      "url": "TODO",
+      "image": "reference/StudentOrganizationPhoto/树礼南柯迷岛剧本杀社.jpg"
+    },
+    "shuli_xuefa": {
+      "name": "树礼学生支持与发展中心",
+      "url": "https://mp.weixin.qq.com/s/zMQvMIfSjUiH5JmSUNnFWg",
+      "image": "reference/StudentOrganizationPhoto/树礼学生支持与发展中心.jpg"
+    },
+    "shuli_lanqiudui": {
+      "name": "树礼男篮",
+      "url": "https://mp.weixin.qq.com/s/0AFxcoX_oAUanOlMy841Uw",
+      "image": "reference/StudentOrganizationPhoto/树礼男篮.jpg"
     }
-  }
+}
 }
