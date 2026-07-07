@@ -26,7 +26,7 @@
       "submit": "提交并查看结果"
     },
     "result": {
-      "modeKicker": "TODO: 主类型标签",
+      "modeKicker": "你的SLTI人格类型",
       "analysisTitle": "TODO",
       "dimensionsTitle": "TODO",
       "noteTitle": "TODO",
@@ -40,14 +40,14 @@
       "authorParagraphs": [
         "TODO"
       ],
-      "hiddenOverrideKicker": "TODO: 隐藏人格标题",
-      "hiddenOverrideBadge": "TODO: 隐藏人格徽章",
-      "hiddenOverrideSub": "TODO: 隐藏人格副标题",
-      "fallbackKicker": "TODO: 兜底标题",
-      "fallbackBadgePattern": "TODO {similarity}%",
-      "fallbackSub": "TODO: 兜底副标题",
+      "hiddenOverrideKicker": "⚠️ 检测到隐藏信号",
+      "hiddenOverrideBadge": "隐藏人格",
+      "hiddenOverrideSub": "有些灵魂不属于常规分类。夜深人静的时候，自会找到同类。",
+      "fallbackKicker": "难以归类的人格",
+      "fallbackBadgePattern": "最高相似度 {similarity}%",
+      "fallbackSub": "没有哪种类型与你的答案完美契合——你可能是独特的混合体。以下展示最接近的结果。",
       "regularBadgePattern": "匹配度 {similarity}% · 命中 {exact}/15 维",
-      "regularSub": "TODO: 常规副标题",
+      "regularSub": "以上结果由SLTI十五维度模型计算得出，仅供娱乐参考",
       "scorePattern": "{level} / {score}分",
       "resultNamePattern": "{name}"
     }
