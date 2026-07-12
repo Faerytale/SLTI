@@ -869,36 +869,6 @@ button:disabled {
   background: var(--soft);
 }
 
-@media (max-width: 780px) {
-  .shell {
-    padding: 24px 16px 56px;
-  }
-
-  .shell-header {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .hero-grid,
-  .info-grid,
-  .result-top,
-  .blog-card {
-    grid-template-columns: 1fr;
-  }
-
-  .hero,
-  .test-wrap,
-  .result-wrap,
-  .section-block,
-  .blog-hero,
-  .blog-detail {
-    padding: 24px;
-  }
-
-  .question-title {
-    font-size: 22px;
-  }
-}
 
  @media (max-width: 780px) {
     #intro {
