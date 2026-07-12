@@ -39,6 +39,9 @@
     margin: 0 auto;
     overflow: hidden;
     border-radius: 30px;
+  }
+  /* 仅在首页激活时使用 flex 居中 */
+  #intro.screen.active {
     display: flex;
     align-items: center;
     justify-content: center;
