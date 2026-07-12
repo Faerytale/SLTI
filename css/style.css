@@ -39,6 +39,9 @@
     margin: 0 auto;
     overflow: hidden;
     border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   #intro::before {
     content: "";
@@ -58,8 +61,8 @@
 
   /* 只保留“SLTI测试”框作为浮层，降低透明度 */
   #intro .hero {
-     margin: 30vh auto 0;
-    max-width: 640px;
+    margin: 0;
+    max-width: 85%;
     background: rgba(255, 255, 255, 0.16);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -68,10 +71,10 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    min-height: 220px;
+    padding: 36px 40px;
   }
   #intro .hero-title {
-    margin: 0 0 24px;
+    margin: 0 0 16px;
      color: #e98502;
     text-shadow:
       0 1px 2px rgba(0, 0, 0, 0.5),
@@ -904,7 +907,7 @@ button:disabled {
     #intro {
       width: min(84vw, 700px);
       aspect-ratio: 4 / 5;
-      margin: 150px auto 0;
+      margin: 0 auto;
     }
 
     #intro::before {
@@ -914,14 +917,13 @@ button:disabled {
     }
 
     #intro .hero {
-      margin: 20vh auto 0;
-      max-width: 76%;
-      min-height: 120px;
-      padding: 20px;
+      margin: 0;
+      max-width: 88%;
+      padding: 24px 20px;
     }
 
     #intro .hero-title {
-      font-size: clamp(22px, 6vw, 32px);
+      font-size: clamp(18px, 5vw, 28px);
       margin: 0 0 12px;
       white-space: normal;
     }
