@@ -11,6 +11,8 @@ let pageData;
 const state = {
   answers: {},
   shuffledQuestions: [],
+  nearbyTypeKeys: [],
+  resultTypeKey: null,
 };
 
 // DOM 引用
@@ -18,6 +20,7 @@ const screens = {
   intro: document.getElementById('intro'),
   result: document.getElementById('result'),
   test: document.getElementById('test'),
+  allTypes: document.getElementById('allTypes'),
 };
 
 const questionList = document.getElementById('questionList');
@@ -152,7 +155,7 @@ function renderDimensionList(result) {
       return `
         <div class="dim-item">
           <div class="dim-item-top">
-            <div class="dim-item-name">${pageData.dimensionMeta[dimension].name}</div>
+            <div class="dim-item-name">${pageData.dimensionMeta[dimension].name.replace(/^[A-Za-z]+\d+\s+/, '')}</div>
             <div class="dim-item-score">${formatText(
               pageData.chrome.result.scorePattern,
               { level, score: rawScore }
@@ -246,6 +249,13 @@ function renderRecommendations(type) {
 function renderNearbyTypes(ranked, currentCode) {
   const container = document.getElementById('nearbyList');
   const others = ranked.filter((t) => t.code !== currentCode).slice(0, 2);
+  state.nearbyTypeKeys = others.map((t) => {
+    // t.code 是显示编号如 "人格1"，需要找回 typeLibrary 的 key 如 "CTRL"
+    for (const [key, val] of Object.entries(pageData.typeLibrary)) {
+      if (val.code === t.code) return key;
+    }
+    return null;
+  }).filter(Boolean);
   if (!others.length) {
     container.innerHTML = '<p class="type-desc">没有足够接近的备选结果。</p>';
     return;
@@ -277,6 +287,14 @@ function renderResult() {
   const type = result.finalType;
   const imagePath = pageData.imagePaths[type.code];
 
+  // 找到当前结果类型在 typeLibrary 中的 key
+  for (const [key, t] of Object.entries(pageData.typeLibrary)) {
+    if (t.code === type.code) {
+      state.resultTypeKey = key;
+      break;
+    }
+  }
+
   document.getElementById('resultModeKicker').textContent = chrome.kicker;
   document.getElementById('resultTypeName').textContent = formatText(
     pageData.chrome.result.resultNamePattern,
@@ -302,6 +320,80 @@ function renderResult() {
   showScreen('result');
 }
 
+// 渲染单个人格卡片 HTML
+function renderTypeCard(key, t, badge = '') {
+  const imgPath = pageData.imagePaths[t.code] || '';
+  return `
+    <div class="type-card${badge ? ' type-card-nearby' : ''}">
+      ${imgPath ? `<img src="${imgPath}" alt="${t.cn}" loading="lazy" />` : ''}
+      <div class="type-card-body">
+        ${badge ? `<span class="type-card-nearby-badge">${badge}</span>` : ''}
+        <h4>${t.cn}</h4>
+        <p class="type-card-intro">${t.prototype || t.intro}</p>
+      </div>
+    </div>
+  `;
+}
+
+// 渲染所有人格总览页
+function renderAllTypes() {
+  const highlight = document.getElementById('allTypesHighlight');
+  const grid = document.getElementById('allTypesGrid');
+  const typeLibrary = pageData.typeLibrary;
+  const resultKey = state.resultTypeKey;
+  const nearbySet = new Set(state.nearbyTypeKeys);
+
+  // === 顶部高亮区域 ===
+  let highlightHTML = '';
+
+  // 你的人格类型
+  if (resultKey && typeLibrary[resultKey]) {
+    const t = typeLibrary[resultKey];
+    highlightHTML += `
+      <div class="highlight-section">
+        <h3 class="highlight-title">🏆 你的人格类型</h3>
+        <div class="highlight-cards">
+          ${renderTypeCard(resultKey, t, '你的结果')}
+        </div>
+      </div>
+    `;
+  }
+
+  // 你也可能是
+  const nearbyKeys = state.nearbyTypeKeys.filter((k) => k !== resultKey && typeLibrary[k]);
+  if (nearbyKeys.length) {
+    highlightHTML += `
+      <div class="highlight-section">
+        <h3 class="highlight-title">👥 你也可能是</h3>
+        <div class="highlight-cards">
+          ${nearbyKeys.map((k) => renderTypeCard(k, typeLibrary[k], '你的近邻')).join('')}
+        </div>
+      </div>
+    `;
+  }
+
+  highlight.innerHTML = highlightHTML;
+
+  // === 完整网格：按人格编号排序 ===
+  const sortedKeys = Object.keys(typeLibrary).sort((a, b) => {
+    const aNum = parseInt(typeLibrary[a].code.replace('人格', ''), 10);
+    const bNum = parseInt(typeLibrary[b].code.replace('人格', ''), 10);
+    return aNum - bNum;
+  });
+
+  grid.innerHTML = sortedKeys
+    .map((key) => {
+      const t = typeLibrary[key];
+      const isResult = key === resultKey;
+      const isNearby = nearbySet.has(key) && !isResult;
+      const badge = isResult ? '你的结果' : isNearby ? '你的近邻' : '';
+      return renderTypeCard(key, t, badge);
+    })
+    .join('');
+
+  showScreen('allTypes');
+}
+
 // 开始测试
 function startTest() {
   state.answers = {};
@@ -319,6 +411,8 @@ async function init() {
   document.getElementById('backIntroBtn').addEventListener('click', () => showScreen('intro'));
   document.getElementById('restartBtn').addEventListener('click', startTest);
   document.getElementById('toTopBtn').addEventListener('click', () => showScreen('intro'));
+  document.getElementById('viewAllTypesBtn').addEventListener('click', renderAllTypes);
+  document.getElementById('backResultBtn').addEventListener('click', () => showScreen('result'));
   submitButton.addEventListener('click', renderResult);
   testButton.addEventListener('click', renderResult);
 }

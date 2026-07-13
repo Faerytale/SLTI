@@ -875,6 +875,132 @@ button:disabled {
   background: var(--soft);
 }
 
+/* ================================
+   所有人格总览页 #allTypes
+   ================================ */
+.nearby-header {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.nearby-header h3 {
+  margin: 0;
+}
+
+.btn-sm {
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 10px 18px;
+}
+
+.all-types-wrap {
+  margin-top: 28px;
+  padding: 32px;
+}
+
+.all-types-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.all-types-highlight {
+  margin-top: 24px;
+}
+
+.highlight-section {
+  margin-bottom: 28px;
+}
+
+.highlight-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 14px;
+}
+
+.highlight-cards {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  max-width: 600px;
+}
+
+.all-types-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 24px;
+}
+
+.type-card {
+  background: linear-gradient(180deg, #ffffff, #fbfaf8);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.type-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(77, 43, 0, 0.1);
+}
+
+.type-card.type-card-nearby {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(250, 190, 0, 0.25);
+}
+
+.type-card-nearby-badge {
+  background: var(--accent);
+  color: var(--accent-strong);
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.type-card img {
+  aspect-ratio: 1 / 1;
+  display: block;
+  height: auto;
+  object-fit: contain;
+  width: 100%;
+  background: var(--soft);
+}
+
+.type-card-body {
+  padding: 16px 18px 20px;
+}
+
+.type-card-body h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.type-card-body .type-card-code {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.type-card-body .type-card-intro {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* ================================
+   响应式断点
+   ================================ */
+
 @media (max-width: 780px) {
   .shell {
     padding: 24px 16px 56px;
@@ -903,6 +1029,42 @@ button:disabled {
 
   .question-title {
     font-size: 22px;
+  }
+
+  .all-types-wrap {
+    padding: 24px;
+  }
+
+  .all-types-title {
+    font-size: 22px;
+    white-space: normal;
+  }
+
+  .highlight-cards {
+    grid-template-columns: 1fr;
+    max-width: none;
+  }
+
+  .all-types-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .type-card-body {
+    padding: 12px 14px 16px;
+  }
+
+  .type-card-body h4 {
+    font-size: 17px;
+  }
+
+  .type-card-body .type-card-intro {
+    font-size: 13px;
+  }
+
+  .btn-sm {
+    font-size: 15px;
+    padding: 8px 14px;
   }
 }
 

@@ -59,7 +59,10 @@
             </div>
 
             <div class="nearby-box" id="nearbyBox">
-              <h3>你也可能是...</h3>
+              <div class="nearby-header">
+                <h3>你也可能是...</h3>
+                <button id="viewAllTypesBtn" class="btn-secondary btn-sm">查看人格原型和其他所有人格 →</button>
+              </div>
               <div id="nearbyList" class="nearby-list"></div>
             </div>
 
@@ -78,6 +81,19 @@
               <button id="toTopBtn" class="btn-secondary">返回首页</button>
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- 所有人格页面 -->
+      <section id="allTypes" class="screen">
+        <div class="all-types-wrap card">
+          <div class="topbar">
+            <button id="backResultBtn" class="btn-secondary">← 返回结果</button>
+            <h2 class="all-types-title">全部 27 种人格类型</h2>
+          </div>
+          <p class="subtle-hint">这里汇总了全部SLTI人格类型，看看还有哪些有趣的灵魂。</p>
+          <div id="allTypesHighlight" class="all-types-highlight"></div>
+          <div id="allTypesGrid" class="all-types-grid"></div>
         </div>
       </section>
 
